@@ -3159,15 +3159,11 @@ class CJ4_MapContainer extends NavSystemElementContainer {
         if (this.lastTerrainUpdate > 1000) {
             const curve = new Avionics.Curve();
             const altitude = Math.min(Simplane.getAltitude(), 15000);
+            const AGL = SimVar.GetSimVarValue("RADIO HEIGHT", "feet");
+            const gear = SimVar.GetSimVarValue("GEAR HANDLE POSITION", "boolean");
 
             curve.interpolationFunction = Avionics.CurveTool.StringColorRGBInterpolation;
             curve.add(0, '#000000');
-<<<<<<< Updated upstream
-            curve.add(altitude, '#000000');
-            curve.add(altitude + 1000, '#00c417');
-            curve.add(altitude + 2000, '#ffe600');
-            curve.add(altitude + 3000, '#cc0000');
-=======
             if ((AGL <= 250) && (gear)) {
                 curve.add(altitude, '#000000')
                 if (AGL <= 250) {
@@ -3198,7 +3194,6 @@ class CJ4_MapContainer extends NavSystemElementContainer {
             curve.add(altitude + 500, '#ffe017');
             curve.add(altitude + 1999, '#ffe017');
             curve.add(altitude + 2000, '#ff0000');
->>>>>>> Stashed changes
 
             const altitudeColors = [SvgMapConfig.hexaToRGB('#0000ff')];
 
