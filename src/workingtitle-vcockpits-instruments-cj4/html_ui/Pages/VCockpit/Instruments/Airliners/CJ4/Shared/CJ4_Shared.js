@@ -3181,8 +3181,9 @@ class CJ4_MapContainer extends NavSystemElementContainer {
                         curve.add(altitude - 500, '#000000');
                 }
             } else if ((AGL > 1000) && (AGL <= 2000)) {
-                curve.add(altitude + 5, '#5cdb37');
+                curve.add(altitude -1, '#5cdb37');
                 if (gear) {
+                    curve.add(altitude - 250, '#5cdb37');
                     curve.add(altitude - 500, '#000000');
                     } else {
                         curve.add(altitude - 500, '#5cdb37');
@@ -3193,7 +3194,7 @@ class CJ4_MapContainer extends NavSystemElementContainer {
                 curve.add(altitude - 500, '#5cdb37');
                 curve.add(altitude - 1000, '#000000');
             }
-            curve.add(altitude + 5, '#ffe017');
+            curve.add(altitude, '#ffe017');
             curve.add(altitude + 500, '#ffe017');
             curve.add(altitude + 1999, '#ffe017');
             curve.add(altitude + 2000, '#ff0000');
